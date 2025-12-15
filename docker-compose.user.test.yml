@@ -1,0 +1,23 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.python-template
+    image: ${IMAGE:-user-service:dev}
+    environment:
+      - PORT=8000
+      - SERVICE_NAME=user-service
+    healthcheck:
+      test: ["CMD", "python", "healthcheck.py"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    expose:
+      - "8000"
+
+  sut:
+    image: curlimages/curl:8.10.1
+    depends_on:
+      app:
+        condition: service_healthy
+    command: ["sh", "-lc", "curl -fsS http://app:8000/health && echo 'SUT OK'"]

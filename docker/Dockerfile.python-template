@@ -1,0 +1,19 @@
+FROM python:3.12.11-slim
+
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1
+
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt || true
+
+COPY . /app
+
+RUN useradd -m app && chown -R app:app /app
+USER app
+
+HEALTHCHECK --interval=10s --timeout=2s --start-period=3s --retries=3 \
+    CMD python healthcheck.py
+
+CMD ["python", "server.py"]
+

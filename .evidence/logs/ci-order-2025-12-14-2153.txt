@@ -1,0 +1,190 @@
+SERVICE=order-service
+IMAGE=ghcr.io/sandrocj210/order-service:210bcbe
+K8S_IMAGE=ghcr.io/sandrocj210/order-service:210bcbe
+TAG=210bcbe
+K8S_VERSION=v1.32.2
+[i] usando daemon de minikube para que el cluster vea la imagen
+[1A[1B[0G[?25l[+] Building 0.0s (0/0)  docker:default
+[?25h[1A[0G[?25l[+] Building 0.0s (0/0)  docker:default
+[?25h[1A[0G[?25l[+] Building 0.0s (0/1)                                          docker:default
+[?25h[1A[0G[?25l[+] Building 0.2s (1/2)                                          docker:default
+[36m => [internal] load build definition from Dockerfile.python-template       0.1s
+[0m[36m => => transferring dockerfile: 427B                                       0.0s
+[0m => [internal] load metadata for docker.io/library/python:3.12.11-slim     0.2s
+[?25h[1A[1A[1A[1A[0G[?25l[+] Building 0.4s (1/2)                                          docker:default
+[36m => [internal] load build definition from Dockerfile.python-template       0.1s
+[0m[36m => => transferring dockerfile: 427B                                       0.0s
+[0m => [internal] load metadata for docker.io/library/python:3.12.11-slim     0.3s
+[?25h[1A[1A[1A[1A[0G[?25l[+] Building 0.5s (1/2)                                          docker:default
+[36m => [internal] load build definition from Dockerfile.python-template       0.1s
+[0m[36m => => transferring dockerfile: 427B                                       0.0s
+[0m => [internal] load metadata for docker.io/library/python:3.12.11-slim     0.5s
+[?25h[1A[1A[1A[1A[0G[?25l[+] Building 0.7s (1/2)                                          docker:default
+[36m => [internal] load build definition from Dockerfile.python-template       0.1s
+[0m[36m => => transferring dockerfile: 427B                                       0.0s
+[0m => [internal] load metadata for docker.io/library/python:3.12.11-slim     0.6s
+[?25h[1A[1A[1A[1A[0G[?25l[+] Building 0.7s (2/2)                                          docker:default
+[36m => [internal] load build definition from Dockerfile.python-template       0.1s
+[0m[36m => => transferring dockerfile: 427B                                       0.0s
+[0m[36m => [internal] load metadata for docker.io/library/python:3.12.11-slim     0.6s
+[0m[?25h[1A[1A[1A[1A[0G[?25l[+] Building 0.8s (4/10)                                         docker:default
+[36m => [internal] load build definition from Dockerfile.python-template       0.1s
+[0m[36m => => transferring dockerfile: 427B                                       0.0s
+[0m[36m => [internal] load metadata for docker.io/library/python:3.12.11-slim     0.6s
+[0m[36m => [internal] load .dockerignore                                          0.1s
+[0m[36m => => transferring context: 361B                                          0.0s
+[0m[36m => [1/6] FROM docker.io/library/python:3.12.11-slim@sha256:47ae396f09c13  0.0s
+[0m => [internal] load build context                                          0.0s
+ => => transferring context:                                               0.0s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 0.9s (10/11)                                        docker:default
+[36m => CACHED [3/6] COPY requirements.txt /app/requirements.txt               0.0s
+[0m[36m => CACHED [4/6] RUN pip install --no-cache-dir -r /app/requirements.txt   0.0s
+[0m[36m => CACHED [5/6] COPY . /app                                               0.0s
+[0m[36m => CACHED [6/6] RUN useradd -m app && chown -R app:app /app               0.0s
+[0m => exporting to image                                                     0.1s
+[36m => => exporting layers                                                    0.0s
+[0m[36m => => writing image sha256:c75d1067db5a8bade26051bbe016cee56cd0969c0d069  0.0s
+[0m[36m => => naming to ghcr.io/sandrocj210/order-service:210bcbe                 0.0s
+[0m[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 1.1s (11/11)                                        docker:default
+[36m => CACHED [3/6] COPY requirements.txt /app/requirements.txt               0.0s
+[0m[36m => CACHED [4/6] RUN pip install --no-cache-dir -r /app/requirements.txt   0.0s
+[0m[36m => CACHED [5/6] COPY . /app                                               0.0s
+[0m[36m => CACHED [6/6] RUN useradd -m app && chown -R app:app /app               0.0s
+[0m[36m => exporting to image                                                     0.0s
+[0m[36m => => exporting layers                                                    0.0s
+[0m[36m => => writing image sha256:c75d1067db5a8bade26051bbe016cee56cd0969c0d069  0.0s
+[0m[36m => => naming to ghcr.io/sandrocj210/order-service:210bcbe                 0.0s
+[0m[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 1.2s (11/11) FINISHED                               docker:default
+[36m => [internal] load build definition from Dockerfile.python-template       0.1s
+[0m[36m => => transferring dockerfile: 427B                                       0.0s
+[0m[36m => [internal] load metadata for docker.io/library/python:3.12.11-slim     0.6s
+[0m[36m => [internal] load .dockerignore                                          0.1s
+[0m[36m => => transferring context: 361B                                          0.0s
+[0m[36m => [1/6] FROM docker.io/library/python:3.12.11-slim@sha256:47ae396f09c13  0.0s
+[0m[36m => [internal] load build context                                          0.1s
+[0m[36m => => transferring context: 1.16kB                                        0.0s
+[0m[36m => CACHED [2/6] WORKDIR /app                                              0.0s
+[0m[36m => CACHED [3/6] COPY requirements.txt /app/requirements.txt               0.0s
+[0m[36m => CACHED [4/6] RUN pip install --no-cache-dir -r /app/requirements.txt   0.0s
+[0m[36m => CACHED [5/6] COPY . /app                                               0.0s
+[0m[36m => CACHED [6/6] RUN useradd -m app && chown -R app:app /app               0.0s
+[0m[36m => exporting to image                                                     0.0s
+[0m[36m => => exporting layers                                                    0.0s
+[0m[36m => => writing image sha256:c75d1067db5a8bade26051bbe016cee56cd0969c0d069  0.0s
+[0m[36m => => naming to ghcr.io/sandrocj210/order-service:210bcbe                 0.0s
+[0m[?25h[OK] build in-minikube -> ghcr.io/sandrocj210/order-service:210bcbe
+The push refers to repository [ghcr.io/sandrocj210/order-service]
+8c7716127147: Waiting
+7a92e1b61fd1: Waiting
+41bcc6fcf116: Waiting
+d427f84c6db6: Waiting
+3c43e65991bd: Waiting
+c8cc3e95286c: Waiting
+4a4b84ccaba2: Waiting
+973f6cf5ad28: Waiting
+9a7c3b4d36fc: Waiting
+a179ff026605: Waiting
+3c43e65991bd: Waiting
+8c7716127147: Waiting
+7a92e1b61fd1: Waiting
+41bcc6fcf116: Waiting
+d427f84c6db6: Waiting
+a179ff026605: Waiting
+c8cc3e95286c: Waiting
+4a4b84ccaba2: Waiting
+973f6cf5ad28: Waiting
+9a7c3b4d36fc: Waiting
+a179ff026605: Waiting
+c8cc3e95286c: Waiting
+4a4b84ccaba2: Waiting
+973f6cf5ad28: Waiting
+9a7c3b4d36fc: Waiting
+3c43e65991bd: Waiting
+8c7716127147: Waiting
+7a92e1b61fd1: Waiting
+41bcc6fcf116: Waiting
+d427f84c6db6: Waiting
+c8cc3e95286c: Waiting
+4a4b84ccaba2: Waiting
+973f6cf5ad28: Waiting
+9a7c3b4d36fc: Waiting
+a179ff026605: Waiting
+8c7716127147: Waiting
+7a92e1b61fd1: Waiting
+41bcc6fcf116: Waiting
+d427f84c6db6: Waiting
+3c43e65991bd: Waiting
+41bcc6fcf116: Waiting
+d427f84c6db6: Waiting
+3c43e65991bd: Waiting
+8c7716127147: Waiting
+7a92e1b61fd1: Waiting
+973f6cf5ad28: Waiting
+9a7c3b4d36fc: Waiting
+a179ff026605: Waiting
+c8cc3e95286c: Waiting
+4a4b84ccaba2: Waiting
+7a92e1b61fd1: Waiting
+41bcc6fcf116: Waiting
+d427f84c6db6: Waiting
+3c43e65991bd: Waiting
+8c7716127147: Waiting
+4a4b84ccaba2: Waiting
+973f6cf5ad28: Waiting
+9a7c3b4d36fc: Waiting
+a179ff026605: Waiting
+c8cc3e95286c: Waiting
+c8cc3e95286c: Waiting
+4a4b84ccaba2: Waiting
+973f6cf5ad28: Waiting
+9a7c3b4d36fc: Waiting
+a179ff026605: Waiting
+8c7716127147: Waiting
+7a92e1b61fd1: Waiting
+41bcc6fcf116: Waiting
+d427f84c6db6: Waiting
+3c43e65991bd: Waiting
+9a7c3b4d36fc: Waiting
+a179ff026605: Waiting
+c8cc3e95286c: Waiting
+4a4b84ccaba2: Waiting
+973f6cf5ad28: Waiting
+d427f84c6db6: Waiting
+3c43e65991bd: Waiting
+8c7716127147: Waiting
+7a92e1b61fd1: Waiting
+41bcc6fcf116: Waiting
+c8cc3e95286c: Waiting
+4a4b84ccaba2: Already exists
+973f6cf5ad28: Waiting
+9a7c3b4d36fc: Waiting
+a179ff026605: Waiting
+8c7716127147: Waiting
+7a92e1b61fd1: Waiting
+41bcc6fcf116: Waiting
+d427f84c6db6: Waiting
+3c43e65991bd: Waiting
+973f6cf5ad28: Waiting
+9a7c3b4d36fc: Waiting
+a179ff026605: Layer already exists
+c8cc3e95286c: Waiting
+7a92e1b61fd1: Waiting
+41bcc6fcf116: Waiting
+d427f84c6db6: Waiting
+3c43e65991bd: Waiting
+8c7716127147: Waiting
+7a92e1b61fd1: Waiting
+41bcc6fcf116: Layer already exists
+d427f84c6db6: Layer already exists
+3c43e65991bd: Layer already exists
+8c7716127147: Layer already exists
+973f6cf5ad28: Waiting
+9a7c3b4d36fc: Layer already exists
+c8cc3e95286c: Layer already exists
+7a92e1b61fd1: Layer already exists
+973f6cf5ad28: Layer already exists
+210bcbe: digest: sha256:38d546d1cdda56bc5781ac642e5a73117f686f1cef2eaf403f96b0825ec5d148 size: 856
+[i] syft no encontrado; usando contenedor (docker-archive)
+SBOM -> artifacts/order-service-sbom.json
+[i] cosign no encontrado (skip)
+[i] grype no encontrado; usando contenedor (docker-archive)

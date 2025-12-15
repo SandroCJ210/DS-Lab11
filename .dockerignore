@@ -1,0 +1,32 @@
+# VCS
+.git
+.gitignore
+
+# Python virtualenvs
+venv
+venv/
+.venv
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local artifacts / evidence
+artifacts/
+.evidence/
+*.tar
+*.sarif
+*-sbom.json
+*-grype.sarif
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Docs temp files
+~$*.docx
